@@ -7,13 +7,22 @@
         x:Class="ToDoAval.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="ToDo">
 
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+        Width="800" Height="600"
+        MinWidth="500" MinHeight="400"
+        Focusable="true"
+        Title="To Do List">
+
+    <Design.DataContext> <vm:MainWindowViewModel/> </Design.DataContext>
 
     <Grid RowDefinitions="Auto,*,Auto">
+        <Label Name="MainTitle" Grid.Row="0" Margin="20,15" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandFont}" FontSize="35"> ToDo </Label>
+        <Button Name="AddTaskButton" Grid.Row="0" Margin="20,15" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="10" Width="125"> 
+            <Label FontFamily="{StaticResource QuicksandFont}" FontSize="20"> NewTask </Label> 
+        </Button>
+        <ScrollViewer Name="TasksFrame" Grid.Row="1" Margin="10,0,10,10">
+
+        </ScrollViewer>
 
     </Grid>
 

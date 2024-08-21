@@ -11,8 +11,13 @@
   
     <Application.Styles>
         <!-- The Last One Overrides All -->
-        <SimpleTheme/> 
-        <StyleInclude Source="avares://ToDoAval/Assets/Themes/ObsidianTheme.axaml"/> <!-- Obsidian Theme -->
+        <SimpleTheme/>
         <StyleInclude Source="avares://ToDoAval/Assets/Themes/DarkFluentTheme.axaml"/> <!-- Dark Fluent Theme -->
+        <StyleInclude Source="avares://ToDoAval/Assets/Themes/ObsidianTheme.axaml"/> <!-- Obsidian Theme -->
     </Application.Styles>
+
+    <Application.Resources>
+        <FontFamily x:Key="QuicksandFont">avares://ToDoAval/Assets/Fonts/Quicksand#Quicksand</FontFamily>
+    </Application.Resources>
+
 </Application>
