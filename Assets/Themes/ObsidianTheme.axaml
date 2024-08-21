@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:csharpgui">
+
+    <!-- Variables -->
+    <Style Selector="Window">
+        <Style.Resources>
+            <SolidColorBrush x:Key="Primary">#0D0D0D</SolidColorBrush>
+            <SolidColorBrush x:Key="Secondary">#1E1E1E</SolidColorBrush>
+            <SolidColorBrush x:Key="AltPrimary">#2C3E50</SolidColorBrush>
+            <SolidColorBrush x:Key="AltSecondary">#BCC6CC</SolidColorBrush>
+            <SolidColorBrush x:Key="White">#EEEEEE</SolidColorBrush>
+        </Style.Resources>
+    </Style>
+
+    <Style Selector="Window">
+        <Setter Property="Background" Value="{StaticResource Primary}"/>
+    </Style>
+
+    <Style Selector="Border">
+        <Setter Property="Background" Value="{StaticResource Secondary}"/>
+    </Style>
+
+    <Style Selector="Button">
+        <Setter Property="Background" Value="{StaticResource AltPrimary}"/>
+    </Style>
+
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource White}"/>
+    </Style>
+
+    <Style Selector="TextBox">
+        <Setter Property="Background" Value="#31363F"/>
+        <Setter Property="Foreground" Value="#EEEEEE"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+
+        <Style Selector="^ /template/ TextPresenter">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+    </Style>
+
+</Styles>

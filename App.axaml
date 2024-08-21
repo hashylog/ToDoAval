@@ -10,6 +10,9 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <FluentTheme />
+        <!-- The Last One Overrides All -->
+        <SimpleTheme/> 
+        <StyleInclude Source="avares://ToDoAval/Assets/Themes/ObsidianTheme.axaml"/> <!-- Obsidian Theme -->
+        <StyleInclude Source="avares://ToDoAval/Assets/Themes/DarkFluentTheme.axaml"/> <!-- Dark Fluent Theme -->
     </Application.Styles>
 </Application>
