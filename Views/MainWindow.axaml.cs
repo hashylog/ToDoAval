@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Media;
 
 namespace ToDoAval.Views;
 
@@ -47,7 +49,7 @@ public partial class MainWindow : Window
             CornerRadius = new CornerRadius(5),
             Width = 30,
             Height = 30,
-            
+            Background = Brushes.Transparent,
             Content = new Image
             {
                 Width = 30,
@@ -56,10 +58,10 @@ public partial class MainWindow : Window
             }
         };
 
-        button.Click += (sender, e) => 
-        {
-            TasksFrame.Items.Remove(grid);
-        };
+        button.Click += (sender, e) => TasksFrame.Items.Remove(grid);
+        
+        // If OnKeyDown Enter or Esc, Lose Focus;
+        textbox.KeyDown += (sender, e) => { if ((e.Key == Key.Enter || e.Key == Key.Escape) && FocusManager != null) { FocusManager.ClearFocus(); } };
 
         Grid.SetColumn(checkbox, 0);
         Grid.SetColumn(textbox, 1);

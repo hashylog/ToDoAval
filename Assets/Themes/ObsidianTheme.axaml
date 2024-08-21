@@ -35,11 +35,6 @@
         <Setter Property="Foreground" Value="#EEEEEE"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-
-        <Style Selector="^ /template/ TextPresenter">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-
     </Style>
 
 </Styles>

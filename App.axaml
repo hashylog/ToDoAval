@@ -12,8 +12,8 @@
     <Application.Styles>
         <!-- The Last One Overrides All -->
         <SimpleTheme/>
-        <StyleInclude Source="avares://ToDoAval/Assets/Themes/DarkFluentTheme.axaml"/> <!-- Dark Fluent Theme -->
         <StyleInclude Source="avares://ToDoAval/Assets/Themes/ObsidianTheme.axaml"/> <!-- Obsidian Theme -->
+        <StyleInclude Source="avares://ToDoAval/Assets/Themes/DarkFluentTheme.axaml"/> <!-- Dark Fluent Theme -->
     </Application.Styles>
 
     <Application.Resources>
