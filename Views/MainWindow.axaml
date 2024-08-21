@@ -16,12 +16,21 @@
     <Design.DataContext> <vm:MainWindowViewModel/> </Design.DataContext>
 
     <Grid RowDefinitions="Auto,*,Auto">
+        
         <Label Name="MainTitle" Grid.Row="0" Margin="20,15" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandFont}" FontSize="35"> ToDo </Label>
-        <Button Name="AddTaskButton" Grid.Row="0" Margin="20,15" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="10" Width="125"> 
-            <Label FontFamily="{StaticResource QuicksandFont}" FontSize="20"> NewTask </Label> 
-        </Button>
-        <ScrollViewer Name="TasksFrame" Grid.Row="1" Margin="10,0,10,10">
+        
+        <Button Click="OnButtonClick" Name="AddTaskButton" Grid.Row="0" Margin="20,15" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="10" Width="125">  <Label FontFamily="{StaticResource QuicksandFont}" FontSize="20"> New Task </Label>  </Button>
+        
+        <ScrollViewer Name="ScrollViewer" Grid.Row="1" Margin="10,0,10,10" Background="{StaticResource Secondary}">
 
+            <ItemsControl Name="TasksFrame">
+                <Grid Grid.ColumnDefinitions="Auto,*,Auto">
+                    <CheckBox Grid.Column="0" Margin="15,10" VerticalAlignment="Center" CornerRadius="50"></CheckBox>
+                    <TextBox Watermark="New Task" Grid.Column="1" Margin="10,10" VerticalAlignment="Center" CornerRadius="5"></TextBox>
+                    <Button Grid.Column="2" Margin="15,10" VerticalAlignment="Center" CornerRadius="5" Width="30" Height="30"> <Image Width="30" Height="30" Source="avares://ToDoAval/Assets/Images/Icons/delete.png"/> </Button>
+                </Grid>
+            </ItemsControl>
+            
         </ScrollViewer>
 
     </Grid>
