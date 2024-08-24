@@ -15,18 +15,18 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ToDoAval
-build_property.ProjectDir = /home/hashylog/Downloads/Projects/ToDoAval/
+build_property.ProjectDir = /home/hashylog/Documents/Projects/ToDoAval/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[/home/hashylog/Downloads/Projects/ToDoAval/App.axaml]
+[/home/hashylog/Documents/Projects/ToDoAval/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/hashylog/Downloads/Projects/ToDoAval/Assets/Themes/DarkFluentTheme.axaml]
+[/home/hashylog/Documents/Projects/ToDoAval/Assets/Themes/DarkFluentTheme.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/hashylog/Downloads/Projects/ToDoAval/Assets/Themes/ObsidianTheme.axaml]
+[/home/hashylog/Documents/Projects/ToDoAval/Assets/Themes/ObsidianTheme.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/hashylog/Downloads/Projects/ToDoAval/Views/MainWindow.axaml]
+[/home/hashylog/Documents/Projects/ToDoAval/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

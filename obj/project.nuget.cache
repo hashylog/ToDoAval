@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NGmn+m4N4SalTeolK0uGq9fJBGxDbFZbTIUCw6fe6WE3yBBlzyfPP+/ymrqFfpfa+SuUtuPis8PqmB7uiKmd4g==",
+  "dgSpecHash": "Kyk0+FTLEdeRxV0xRALZjX6I0bpx8z7LDmzV6aCRbX+07E8+nYTFmcviuUcMY+TC4ZlMsL/CobkvJqkPWJKCKw==",
   "success": true,
-  "projectFilePath": "/home/hashylog/Downloads/Projects/ToDoAval/ToDoAval.csproj",
+  "projectFilePath": "/home/hashylog/Documents/Projects/ToDoAval/ToDoAval.csproj",
   "expectedPackageFiles": [
     "/home/hashylog/.nuget/packages/avalonia/11.1.0/avalonia.11.1.0.nupkg.sha512",
     "/home/hashylog/.nuget/packages/avalonia.angle.windows.natives/2.1.22045.20230930/avalonia.angle.windows.natives.2.1.22045.20230930.nupkg.sha512",

@@ -22,9 +22,8 @@
         <Button Click="OnButtonClick" Name="AddTaskButton" Grid.Row="0" Margin="20,15" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="10" Width="125" Background="{StaticResource Secondary}">  <Label FontFamily="{StaticResource QuicksandFont}" FontSize="20"> New Task </Label>  </Button>
         
         <ScrollViewer Name="ScrollViewer" Grid.Row="1" Margin="10,0,10,10">
-
             <ItemsControl Name="TasksFrame">
-
+                <!-- Items Here -->
             </ItemsControl>
 
         </ScrollViewer>

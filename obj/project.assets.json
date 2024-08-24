@@ -1525,11 +1525,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/hashylog/Downloads/Projects/ToDoAval/ToDoAval.csproj",
+      "projectUniqueName": "/home/hashylog/Documents/Projects/ToDoAval/ToDoAval.csproj",
       "projectName": "ToDoAval",
-      "projectPath": "/home/hashylog/Downloads/Projects/ToDoAval/ToDoAval.csproj",
+      "projectPath": "/home/hashylog/Documents/Projects/ToDoAval/ToDoAval.csproj",
       "packagesPath": "/home/hashylog/.nuget/packages/",
-      "outputPath": "/home/hashylog/Downloads/Projects/ToDoAval/obj/",
+      "outputPath": "/home/hashylog/Documents/Projects/ToDoAval/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/hashylog/.nuget/NuGet/NuGet.Config"
