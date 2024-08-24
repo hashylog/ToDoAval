@@ -96,7 +96,7 @@ public partial class MainWindow : Window
 
     public void OnPointerPressedHandler(object sender, PointerPressedEventArgs args)
     {
-        System.Console.WriteLine("Pointer Clicked");
+        //System.Console.WriteLine("Pointer Clicked");
         GridClicked = args.Source as Grid;
     }
 
@@ -107,11 +107,12 @@ public partial class MainWindow : Window
         {
             TasksFrame.Items.Add(Tasks[i]);
         }
+        GridClicked = null;
     }
 
     public void OnPointerReleaseHandler(object sender, PointerReleasedEventArgs args)
     {
-        System.Console.WriteLine("Pointer Released");
+        //System.Console.WriteLine("Pointer Released");
 
         if (GridClicked == null) return;
 
@@ -124,6 +125,7 @@ public partial class MainWindow : Window
         {
             SwapItemInList(Tasks, Tasks.FindIndex(item => item == GridClicked), 0);
             RebuildTasks();
+            return;
         }
 
         // Last Index Snap
@@ -131,6 +133,7 @@ public partial class MainWindow : Window
         {
             SwapItemInList(Tasks, Tasks.FindIndex(item => item == GridClicked), Tasks.Count-1);
             RebuildTasks();
+            return;
         }
 
         if (HitRelease != null && GridClicked != null)
@@ -138,7 +141,7 @@ public partial class MainWindow : Window
             SwapItemInList(Tasks, Tasks.FindIndex(item => item == GridClicked), Tasks.FindIndex(item => item == HitRelease));
             RebuildTasks();
         }
-
+        
         GridClicked = null;
 
     }
