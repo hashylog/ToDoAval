@@ -10,10 +10,10 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <!-- The Last One Overrides All -->
+        <!-- Here You choose the Theme you Want -->
+        <!-- You can create new Themes by putting them into the "Assets/Themes" folder. -->
         <SimpleTheme/>
-        <StyleInclude Source="avares://ToDoAval/Assets/Themes/ObsidianTheme.axaml"/> <!-- Obsidian Theme -->
-        <StyleInclude Source="avares://ToDoAval/Assets/Themes/DarkFluentTheme.axaml"/> <!-- Dark Fluent Theme -->
+        <StyleInclude Source="avares://ToDoAval/Assets/Themes/DarkFluentTheme.axaml"/>
     </Application.Styles>
 
     <Application.Resources>

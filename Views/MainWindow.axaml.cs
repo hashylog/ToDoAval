@@ -1,12 +1,8 @@
 using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Media;
-using Avalonia.VisualTree;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ToDoAval.Views;
 
@@ -25,16 +21,28 @@ public partial class MainWindow : Window
         AddTask();
     }
 
-    int i = 0;
+
     private void AddTask()
     {
+        
+        // --
+        // This Grid acts like a TaskItem. 
+        //
+        // It contains the following components:
+        // 
+        // - TextBox: Main field for displaying the task's name and description.
+        // - CheckBox: Indicates whether the task has been completed or not.
+        // - Button: Used to delete the task.
+        // 
+        // The Grid, acting as a TaskItem, is inserted into the TaskFrame, which is an ItemControl.
+        // To add a new task item to the TaskFrame, simply add the Grid to it.
+        // --
 
         Grid grid = new()
         {
-            Name = "GridName"+i.ToString(),
-            Background = Brushes.Transparent,
+            Background = Avalonia.Media.Brushes.Transparent,
             ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto")
-        }; i++;
+        };
 
         CheckBox checkbox = new()
         {
@@ -58,7 +66,7 @@ public partial class MainWindow : Window
             CornerRadius = new CornerRadius(5),
             Width = 30,
             Height = 30,
-            Background = Brushes.Transparent,
+            Background = Avalonia.Media.Brushes.Transparent,
             Content = new Image
             {
                 Width = 30,
@@ -68,35 +76,38 @@ public partial class MainWindow : Window
         };        
 
         // Feature: Add Drag Drop
+        // ToDo (bruh lol): Add More Features.
         grid.AddHandler(PointerPressedEvent, (sender, e) => { if (sender != null && e != null) OnPointerPressedHandler(sender, e); });
         grid.AddHandler(PointerReleasedEvent, (sender, e) => { if (sender != null && e != null) OnPointerReleaseHandler(sender, e); });
 
         // Remove Task Button
         button.Click += (sender, e) => { Tasks.Remove(grid); TasksFrame.Items.Remove(grid); };
 
-        // If OnKeyDown Enter or Esc, Lose Focus;
+        // If OnKeyDown Enter or Esc, Lose Focus
         textbox.KeyDown += (sender, e) => { if ((e.Key == Key.Enter || e.Key == Key.Escape) && FocusManager != null) { FocusManager.ClearFocus(); } };
 
+        // Styling the Grid (TaskItem)
         Grid.SetColumn(checkbox, 0);
         Grid.SetColumn(textbox, 1);
         Grid.SetColumn(button, 2);
 
+        // Adding the Components to the Grid (TaskItem)
         grid.Children.Add(checkbox);
         grid.Children.Add(textbox);
         grid.Children.Add(button);
 
+        // Add the Grid to the List<Grid>, making the DragDrop/Sort feature works.
         Tasks.Add(grid);
+
+        // Add the Grid (TaskItem) to the TaskFrame (Main Window).
         TasksFrame.Items.Add(grid);
     }
-
-
-
 
     Grid? GridClicked;
 
     public void OnPointerPressedHandler(object sender, PointerPressedEventArgs args)
     {
-        //System.Console.WriteLine("Pointer Clicked");
+        System.Console.WriteLine("Pointer Clicked");
         GridClicked = args.Source as Grid;
     }
 
@@ -112,25 +123,27 @@ public partial class MainWindow : Window
 
     public void OnPointerReleaseHandler(object sender, PointerReleasedEventArgs args)
     {
-        //System.Console.WriteLine("Pointer Released");
+        System.Console.WriteLine("Pointer Released");
 
         if (GridClicked == null) return;
 
-        Grid? HitRelease = this.GetVisualAt(args.GetPosition(this)) as Grid;
+        Grid? HitRelease = Avalonia.VisualTree.VisualExtensions.GetVisualAt(this, args.GetPosition(this)) as Grid;
         
         if (GridClicked == HitRelease) return;
 
-        // Last Index Snap
-        if (args.GetPosition(Tasks.Last()).Y < -5)
+        // First Index Snap (If you DragDrop above the limit, it will Snap).
+        if (args.GetPosition(Tasks[0]).Y < -5)
         {
+            System.Console.WriteLine("Above the Limit, Snapping.");
             SwapItemInList(Tasks, Tasks.FindIndex(item => item == GridClicked), 0);
             RebuildTasks();
             return;
         }
 
-        // Last Index Snap
-        if (args.GetPosition(Tasks.Last()).Y > 50)
+        // Last Index Snap (If you DragDrop below the limit, it will Snap).
+        if (args.GetPosition(Tasks[^1]).Y > 50)
         {
+            System.Console.WriteLine("Below the Limit, Snapping.");
             SwapItemInList(Tasks, Tasks.FindIndex(item => item == GridClicked), Tasks.Count-1);
             RebuildTasks();
             return;
@@ -146,6 +159,7 @@ public partial class MainWindow : Window
 
     }
 
+    // Swap Two Items in the List.
     static void SwapItemInList<T>(List<T> list, int firstindex, int secondindex)
     {
         (list[secondindex], list[firstindex]) = (list[firstindex], list[secondindex]);
